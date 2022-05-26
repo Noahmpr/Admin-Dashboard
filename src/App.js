@@ -25,7 +25,7 @@ import {
 import './App.css';
 
 const App = () => {
-  const activeMenu = false;
+  const activeMenu = true;
   return (
     <div>
       <BrowserRouter>
@@ -37,15 +37,16 @@ const App = () => {
                 className='text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white'
                 style={{
                   backgroundColor: 'black',
-                  borderRadius: '50px',
+                  borderRadius: '50%',
                 }}
               >
                 <FiSettings />
               </button>
             </TooltipComponent>
           </div>
+
           {activeMenu ? (
-            <div className='w-27 fixed sidebar dark:bg-secondary-dark-bg bg-white'>
+            <div className='w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white'>
               <Sidebar />
             </div>
           ) : (
@@ -53,6 +54,7 @@ const App = () => {
               <Sidebar />
             </div>
           )}
+
           <div
             className={`dark:bg-main-bg bg-main-bg min-h-screen w-full ${
               activeMenu ? 'md:ml-72' : 'flex-2'
